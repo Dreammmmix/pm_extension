@@ -147,12 +147,9 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
    - 点击"加载已解压的扩展程序"
    - 选择 `pm_extension/extension`目录
    - 插件将被安装到Chrome浏览器中
-2. **图标文件**
 
-   - 请确保 `pm_extension/extension/images/`目录下包含以下图标文件：
-     - icon16.png (16x16像素)
-     - icon48.png (48x48像素)
-     - icon128.png (128x128像素)
+   ![1742732053714](image/README/1742732053714.png)
+
 
 ## 使用说明
 
