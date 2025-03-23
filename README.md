@@ -5,8 +5,8 @@
 - [PM智慧助手 - 产品经理每日知识推送Chrome插件](#pm智慧助手---产品经理每日知识推送chrome插件)
   - [产品概述](#产品概述)
   - [核心功能](#核心功能)
-  - [技术实现](#技术实现)
   - [用户体验流程](#用户体验流程)
+  - [技术实现](#技术实现)
   - [开发路线图](#开发路线图)
   - [技术可行性分析](#技术可行性分析)
   - [安装说明](#安装说明)
@@ -26,6 +26,25 @@
 
 PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过AI技术每天推送产品管理相关的知识、技巧和行业动态，帮助产品经理持续学习成长。
 
+弹窗页+配置页：
+
+<div align="center">
+  <img src="image/README/1742726787329.png" width="70%" />
+</div>
+
+配置页：
+
+<div align="center">
+  <img src="image/README/1742726819642.png" width="70%" />
+</div>
+
+导出的图片示例：
+
+<div align="center">
+  <img src="image/README/1742727107856.png" width="70%" />
+</div>
+
+
 ## 核心功能
 
 1. **每日知识推送**：自动推送产品经理相关知识，内容包括产品设计、用户研究、需求分析、项目管理等方面的技巧和最佳实践
@@ -39,6 +58,17 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 9. **导出PNG卡片**：支持将知识内容导出为精美PNG图片，便于分享到社交媒体
 10. **个性化知识推荐**：根据用户设置的偏好领域，智能推荐相关知识内容
 11. **收藏内容管理**：在设置页面可以管理收藏的知识内容，支持复制和导出为PNG图片功能
+
+## 用户体验流程
+
+1. 用户安装插件后，每日会收到一条产品经理相关知识的通知
+2. 点击Chrome工具栏中的插件图标，弹出知识展示窗口
+3. 在同一天内再次点击插件图标时，会显示相同的知识内容（无需重复请求API）
+4. 用户可以点击"获取新知识"按钮手动更新当天的知识
+5. 用户可以收藏喜欢的知识点，并在"我的收藏"中查看
+6. 用户可以根据喜好切换深色/浅色模式
+7. 用户可以一键复制知识内容或导出为PNG图片
+8. 用户可以在设置页面设置知识偏好，获取更相关的内容推送
 
 ## 技术实现
 
@@ -66,16 +96,6 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
    - 设置页面（options.html）：用户个性化配置
    - 样式系统：基于Apple设计语言和Linear App风格的现代UI
 
-## 用户体验流程
-
-1. 用户安装插件后，每日会收到一条产品经理相关知识的通知
-2. 点击Chrome工具栏中的插件图标，弹出知识展示窗口
-3. 在同一天内再次点击插件图标时，会显示相同的知识内容（无需重复请求API）
-4. 用户可以点击"获取新知识"按钮手动更新当天的知识
-5. 用户可以收藏喜欢的知识点，并在"我的收藏"中查看
-6. 用户可以根据喜好切换深色/浅色模式
-7. 用户可以一键复制知识内容或导出为PNG图片
-8. 用户可以在设置页面设置知识偏好，获取更相关的内容推送
 
 ## 开发路线图
 
@@ -125,11 +145,11 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
    - 打开Chrome浏览器，访问 `chrome://extensions/`
    - 开启右上角的"开发者模式"
    - 点击"加载已解压的扩展程序"
-   - 选择 `pm/extension`目录
+   - 选择 `pm_extension/extension`目录
    - 插件将被安装到Chrome浏览器中
 2. **图标文件**
 
-   - 请确保 `pm/extension/images/`目录下包含以下图标文件：
+   - 请确保 `pm_extension/extension/images/`目录下包含以下图标文件：
      - icon16.png (16x16像素)
      - icon48.png (48x48像素)
      - icon128.png (128x128像素)
@@ -190,9 +210,17 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 - 首次使用时增加提示，引导用户配置API Key
 - 优化API调用逻辑，提高错误处理能力
 
-![1742725752199](image/README/1742725752199.png)
+弹窗页：
 
-![1742725838807](image/README/1742725838807.png)
+<div align="center">
+  <img src="image/README/1742725752199.png" width="70%" />
+</div>
+
+设置页：
+
+<div align="center">
+  <img src="image/README/1742725838807.png" width="70%" />
+</div>
 
 ### v1.4.0 (2024-03-23)
 
@@ -203,9 +231,17 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 - 支持自动根据用户偏好调整API请求，提供更相关的知识内容
 - 增强收藏页面功能，添加复制和导出PNG功能，提升内容管理体验
 
-![1742723478360](image/README/1742723478360.png)
+设置页：
 
-![1742723503408](image/README/1742723503408.png)
+<div align="center">
+  <img src="image/README/1742723478360.png" width="70%" />
+</div>
+
+弹窗页：
+
+<div align="center">
+  <img src="image/README/1742723503408.png" width="70%" />
+</div>
 
 ### v1.3.0 (2024-03-23)
 
@@ -217,7 +253,9 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 - 改进Markdown内容渲染，提高可读性
 - 重构CSS系统，使用变量实现一致性设计
 
-![1742723412563](image/README/1742723412563.png)
+<div align="center">
+  <img src="image/README/1742723412563.png" width="70%" />
+</div>
 
 ### v1.2.0 (2024-03-22)
 
@@ -226,7 +264,9 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 - 添加午夜自动重置缓存机制，确保每天自动更新知识内容
 - 优化API调用失败时的容错机制，使用最近的缓存内容作为备用
 
-![1742723379896](image/README/1742723379896.png)
+<div align="center">
+  <img src="image/README/1742723379896.png" width="70%" />
+</div>
 
 ### v1.1.0 (2024-03-22)
 
@@ -244,7 +284,9 @@ PM智慧助手是一款专为产品经理设计的Chrome浏览器插件，通过
 - 提供用户设置页面
 - icon来源：
 
-  ![1742723825544](image/README/1742723825544.png)
+  <div align="center">
+    <img src="image/README/1742723825544.png" width="70%" />
+  </div>
 
 ## 项目文件结构
 
@@ -284,44 +326,68 @@ pm/extension/
 
 1. 搭建框架
 
-![1742724029881](image/README/1742724029881.png)
+<div align="center">
+  <img src="image/README/1742724029881.png" width="70%" />
+</div>
 
 2. markdown渲染
 
-![1742724065619](image/README/1742724065619.png)
+<div align="center">
+  <img src="image/README/1742724065619.png" width="70%" />
+</div>
 
 3. 修正调用api逻辑
 
-![1742724082428](image/README/1742724082428.png)
+<div align="center">
+  <img src="image/README/1742724082428.png" width="70%" />
+</div>
 
 4. 样式
 
-![1742724098623](image/README/1742724098623.png)
+<div align="center">
+  <img src="image/README/1742724098623.png" width="70%" />
+</div>
 
 5. 样式，并手动调整了一下
 
-![1742724125903](image/README/1742724125903.png)
+<div align="center">
+  <img src="image/README/1742724125903.png" width="70%" />
+</div>
 
 6. 修复收藏逻辑、保存设置逻辑
 
-![1742724143100](image/README/1742724143100.png)
+<div align="center">
+  <img src="image/README/1742724143100.png" width="70%" />
+</div>
 
-![1742724164626](image/README/1742724164626.png)
+<div align="center">
+  <img src="image/README/1742724164626.png" width="70%" />
+</div>
 
 8. 导出
 
-![1742724184410](image/README/1742724184410.png)
+<div align="center">
+  <img src="image/README/1742724184410.png" width="70%" />
+</div>
 
 9. 修复导出和样式
 
-![1742724203309](image/README/1742724203309.png)
+<div align="center">
+  <img src="image/README/1742724203309.png" width="70%" />
+</div>
 
-![1742724217160](image/README/1742724217160.png)
+<div align="center">
+  <img src="image/README/1742724217160.png" width="70%" />
+</div>
 
 11. 补充设置页面的导出
 
-![1742724235111](image/README/1742724235111.png)
+<div align="center">
+  <img src="image/README/1742724235111.png" width="70%" />
+</div>
 
 12. 逻辑更改为用户自行配置key
 
-![1742724261967](image/README/1742724261967.png)
+<div align="center">
+  <img src="image/README/1742724261967.png" width="70%" />
+</div>
