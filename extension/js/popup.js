@@ -52,6 +52,8 @@ function setupEventListeners() {
   // 刷新按钮 - 强制获取新内容
   refreshButton.addEventListener('click', () => {
     showLoading(true);
+    // 添加一个成功提示，告知用户新的知识偏好设置会在获取新知识时生效
+    // showToast('正在获取新知识，您的最新偏好设置将被应用', 'info');
     getKnowledgeFromBackground(true); // 强制更新
   });
   
@@ -272,6 +274,8 @@ function showToast(message, type = 'success') {
     toastElement.querySelector('i').className = 'fas fa-check-circle';
   } else if (type === 'error') {
     toastElement.querySelector('i').className = 'fas fa-exclamation-circle';
+  } else if (type === 'info') {
+    toastElement.querySelector('i').className = 'fas fa-info-circle';
   }
   
   // 显示提示

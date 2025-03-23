@@ -189,10 +189,11 @@ function saveSettings() {
     // 重新设置闹钟
     chrome.runtime.sendMessage({ action: 'updateAlarm' });
     
-    // 重置知识缓存，使下次获取知识时考虑新的偏好设置
-    chrome.runtime.sendMessage({ action: 'resetKnowledgeCache' });
+    // 不再重置知识缓存，这样下次点击插件图标时仍然使用缓存内容
+    // 新的偏好设置将在用户手动点击"获取新知识"按钮时生效
+    // chrome.runtime.sendMessage({ action: 'resetKnowledgeCache' });
     
-    showToast('设置已保存！', 'success');
+    showToast('设置已保存！新的偏好设置将在下次点击"获取新知识"时生效', 'info');
     settingsChanged = false;
   });
 }
@@ -390,6 +391,8 @@ function showToast(message, type = 'success') {
     toastElement.querySelector('i').className = 'fas fa-check-circle';
   } else if (type === 'error') {
     toastElement.querySelector('i').className = 'fas fa-exclamation-circle';
+  } else if (type === 'info') {
+    toastElement.querySelector('i').className = 'fas fa-info-circle';
   }
   
   // 显示提示
