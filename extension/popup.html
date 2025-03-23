@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PM智慧助手</title>
+  <link rel="stylesheet" href="css/popup.css">
+  <!-- 引入Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- 引入Markdown解析库 -->
+  <script src="js/marked.min.js"></script>
+  <!-- 引入HTML转Canvas库 -->
+  <script src="js/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>每天一个PM知识</h1>
+      <!-- <p class="subtitle">每日产品经理知识</p> -->
+    </div>
+    
+    <div class="content">
+      <div id="knowledge-card">
+        <div id="loading" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>正在获取知识...</p>
+        </div>
+        <div id="knowledge-content" class="hidden">
+          <!-- 改用div而不是p，以支持更丰富的HTML内容 -->
+          <div id="knowledge-text" class="markdown-content"></div>
+          
+          <!-- 添加底部按钮区域 -->
+          <div class="knowledge-actions bottom-actions">
+            <button id="copy-btn" class="icon-btn" title="复制内容">
+              <i class="fas fa-copy"></i>
+            </button>
+            <button id="export-btn" class="icon-btn" title="导出为图片">
+              <i class="fas fa-image"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button id="refresh-btn" class="btn primary-btn">
+        <i class="fas fa-sync-alt"></i>
+        获取新知识
+      </button>
+      <button id="save-btn" class="btn secondary-btn">
+        <i class="fas fa-bookmark"></i>
+        收藏
+      </button>
+    </div>
+    
+    <div class="footer">
+      <a href="options.html" target="_blank">
+        <i class="fas fa-cog"></i>
+        设置
+      </a>
+      <a href="#" id="show-favorites">
+        <i class="fas fa-heart"></i>
+        我的收藏
+      </a>
+    </div>
+  </div>
+  
+  <!-- 提示信息 -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toast-message"></span>
+  </div>
+  
+  <script src="js/popup.js"></script>
+</body>
+</html> 
